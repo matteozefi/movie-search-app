@@ -33,5 +33,5 @@ A responsive web application that allows users to search for movies using the OM
 This app includes a demo API key for portfolio purposes. In a production environment, API keys should be stored securely using environment variables or a backend proxy server to prevent exposure and rate limit abuse.
 
 ## Live Demo
-
+https://matteozefi.github.io/movie-search-app/
 
