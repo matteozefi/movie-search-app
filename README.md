@@ -24,4 +24,14 @@ A responsive web application that allows users to search for movies using the OM
 - Vanilla JavaScript
 - OMDB API
 
+## Installation
+- Clone the repository
+- Open 'index.html' in your browser (or open it via live server if you have VSCode)
+- Start searching for movies!
+
+## API Key Note
+This app includes a demo API key for portfolio purposes. In a production environment, API keys should be stored securely using environment variables or a backend proxy server to prevent exposure and rate limit abuse.
+
+## Live Demo
+
 
