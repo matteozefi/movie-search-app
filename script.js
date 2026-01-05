@@ -22,11 +22,12 @@ searchBtn.addEventListener("click", async () => {
         showError("Please enter a movie title to search.");
         return;
     } else {
-        viewingWatchlist = false; // ✅ NEW
+        viewingWatchlist = false;
         searchMovies(searchTerm);
     }
 });
 
+//Search upon Enter functionality
 searchInput.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
         searchBtn.click();
@@ -51,7 +52,7 @@ const showError = (message) => {
 const searchMovies = async (searchTerm) => {
     showLoading();
 
-    // ✅ NEW: token prevents older search results from overwriting newer ones
+    //token prevents older search results from overwriting newer ones
     const token = ++lastSearchToken;
 
     try {
@@ -65,7 +66,7 @@ const searchMovies = async (searchTerm) => {
 
         const data = await response.json();
 
-        // ✅ NEW: ignore stale results
+        //ignore stale results
         if (token !== lastSearchToken) return;
 
         if (data.Response === "False") {
@@ -228,7 +229,7 @@ const updateWatchlistCount = () => {
 
 //Display Watchlist Movies
 watchlistBtn.addEventListener("click", () => {
-    viewingWatchlist = true; // ✅ NEW
+    viewingWatchlist = true;
     const watchlist = getWatchlist();
     if (watchlist.length === 0) {
         showError("Your watchlist is empty. Add some movies!");
@@ -252,7 +253,7 @@ const removeFromWatchlist = (movie) => {
     updateWatchlistCount();
     alert(`"${movie.Title}" has been removed from your watchlist.`);
 
-    // ✅ NEW: if currently viewing watchlist, update the UI immediately
+    //if currently viewing watchlist, update the UI immediately
     if (viewingWatchlist) {
         const card = document.querySelector(`.movie-card[data-imdbid="${movie.imdbID}"]`);
         if (card) card.remove();
@@ -272,3 +273,4 @@ const closeModal = () => {
 //Initial Watchlist Count Update
 updateWatchlistCount();
 displayMovies(getWatchlist());
+
