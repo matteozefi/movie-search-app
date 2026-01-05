@@ -18,4 +18,10 @@ A responsive web application that allows users to search for movies using the OM
 - Graceful error handling for failed searches or network issues
 - Loading spinner for better user experience
 
+## Tech Stack
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- OMDB API
+
 
