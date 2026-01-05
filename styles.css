@@ -87,7 +87,7 @@ hr {
 }
 
 /* =========================
-   Buttons (grouped to remove repetition)
+   Buttons
    ========================= */
 #search-button,
 #watchlist-button,
@@ -100,7 +100,7 @@ hr {
   cursor: pointer;
 }
 
-/* Individual button sizing/colors (kept identical) */
+/* Individual button sizing/colors */
 #search-button {
   padding: 15px 20px;
   background-color: #1e90ff;
@@ -125,7 +125,7 @@ hr {
   display: none;
 }
 
-/* Shared hover behavior (kept identical to your hover styles) */
+/* Shared hover behavior */
 #search-button:hover,
 #watchlist-button:hover,
 #add-to-watchlist:hover,
@@ -135,7 +135,7 @@ hr {
   transition: transform 0.3s;
 }
 
-/* Toggle classes for watchlist buttons (unchanged behavior) */
+/* Toggle classes for watchlist buttons */
 #remove-watchlist-item.show {
   display: block;
 }
@@ -484,3 +484,4 @@ hr {
     gap: 10px;
   }
 }
+
