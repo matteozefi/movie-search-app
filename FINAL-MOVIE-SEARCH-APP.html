@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="FINAL-MOVIE-SEARCH-APP.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="images/popcorn.png">
+  </head>
+  <body>
+    <div id="title-container">
+      <h1 id="title">🎬 Movie Search App</h1>
+      <p id="title-description">Search for movies and build your watchlist</p>
+    </div>
+    <hr />
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Ex. Inception" />
+      <button id="search-button">Search</button>
+    </div>
+    <div id="watchlist-container">
+      <button id="watchlist-button">
+        My Watchlist <span id="watchlist-count"></span>
+      </button>
+    </div>
+    <div id="movies-container">
+      <!-- Movie results will be displayed here -->
+    </div>
+    <div id="modal" class="modal">
+      <div id="modal-content">
+        <button id="modal-close-button">&times;</button>
+        <div id="modal-body">
+          <!-- Watchlist movies will be displayed here -->
+        </div>
+      </div>
+    </div>
+    <hr id="bottom-line" />
+    <p id="copyright">Created by Matteo Zefi | &copy 2025</p>
+    <script src="FINAL-MOVIE-SEARCH-APP.js"></script>
+  </body>
+</html>

@@ -1,0 +1,486 @@
+/* =========================
+   Base Reset + Typography
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #121212;
+  color: white;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Inter", cursive;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   Header
+   ========================= */
+#title-container {
+  text-align: center;
+  margin: 25px 0;
+}
+
+#title {
+  font-size: 2.75rem;
+  font-family: "Roboto", sans-serif;
+}
+
+#title-description {
+  font-size: 1rem;
+}
+
+/* =========================
+   Horizontal Rules
+   ========================= */
+hr {
+  border: none;
+  border-top: 1px solid white;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#bottom-line {
+  margin-top: 30px;
+}
+
+/* =========================
+   Search + Watchlist Controls
+   ========================= */
+#search-container {
+  text-align: center;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+#search-input {
+  width: 20%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#watchlist-container {
+  text-align: center;
+  margin: 35px 0;
+}
+
+#watchlist-count {
+  margin-left: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: white;
+  padding: 2px 8px;
+  color: #228b22;
+}
+
+/* =========================
+   Buttons (grouped to remove repetition)
+   ========================= */
+#search-button,
+#watchlist-button,
+#add-to-watchlist,
+#remove-watchlist-item {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Individual button sizing/colors (kept identical) */
+#search-button {
+  padding: 15px 20px;
+  background-color: #1e90ff;
+}
+
+#watchlist-button {
+  background-color: #228b22;
+  padding: 10px 20px;
+  width: 6.75%;
+}
+
+#add-to-watchlist {
+  background-color: #228b22;
+  padding: 10px 20px;
+  margin-top: 15px;
+}
+
+#remove-watchlist-item {
+  background-color: #dc143c;
+  padding: 10px 20px;
+  margin-top: 15px;
+  display: none;
+}
+
+/* Shared hover behavior (kept identical to your hover styles) */
+#search-button:hover,
+#watchlist-button:hover,
+#add-to-watchlist:hover,
+#remove-watchlist-item:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+/* Toggle classes for watchlist buttons (unchanged behavior) */
+#remove-watchlist-item.show {
+  display: block;
+}
+
+#add-to-watchlist.none {
+  display: none;
+}
+
+/* =========================
+   Movies Grid + Cards
+   ========================= */
+#movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 3px solid #1a2332;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.no-poster {
+  width: 100%;
+  height: 300px;
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaaaaa;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px;
+}
+
+.movie-details {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1a2332;
+}
+
+.movie-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.movie-year {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-size: 1.2rem;
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   Spinner
+   ========================= */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   Modal
+   ========================= */
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#modal.show {
+  display: block;
+}
+
+#modal-content {
+  background-color: #1e1e1e;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 10px;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+#modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+#modal-close-button:hover {
+  color: #1a2332;
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+#modal-body h2 {
+  margin-bottom: 20px;
+}
+
+#modal-body p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.horiz-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal-movie-poster {
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  height: 400px;
+}
+
+.modal-info-section {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   Footer
+   ========================= */
+#copyright {
+  text-align: center;
+  margin: 25px 0;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+/* ============================
+   Responsive Media Queries
+   ============================ */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  #search-input {
+    width: 40%;
+  }
+
+  #watchlist-button {
+    width: auto;
+    min-width: 160px;
+  }
+
+  #movies-container {
+    padding: 18px;
+    gap: 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  #title {
+    font-size: 2.2rem;
+  }
+
+  #title-description {
+    font-size: 0.95rem;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  #search-container {
+    flex-direction: column;
+    gap: 12px;
+    margin: 22px 0;
+    padding: 0 16px;
+  }
+
+  #search-input {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  #search-button {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  #watchlist-container {
+    margin: 22px 0;
+    padding: 0 16px;
+  }
+
+  #watchlist-button {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  #movies-container {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  #modal {
+    padding: 12px;
+  }
+
+  #modal-content {
+    margin: 10% auto;
+    max-width: 95%;
+  }
+
+  .modal-movie-poster {
+    height: 340px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  #title-container {
+    margin: 18px 0;
+    padding: 0 12px;
+  }
+
+  #title {
+    font-size: 1.85rem;
+  }
+
+  #title-description {
+    font-size: 0.9rem;
+  }
+
+  #search-container {
+    margin: 18px 0;
+    padding: 0 12px;
+  }
+
+  #search-input,
+  #search-button,
+  #watchlist-button {
+    width: 100%;
+    max-width: none;
+  }
+
+  #movies-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .movie-poster,
+  .no-poster {
+    height: 260px;
+  }
+
+  #modal {
+    padding: 10px;
+  }
+
+  #modal-content {
+    margin: 12% auto;
+    max-width: 100%;
+  }
+
+  #modal-close-button {
+    top: 8px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .modal-movie-poster {
+    height: 280px;
+  }
+
+  .modal-info-section {
+    padding: 14px;
+  }
+
+  .horiz-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
