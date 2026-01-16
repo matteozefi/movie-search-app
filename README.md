@@ -5,6 +5,9 @@ A responsive web application that allows users to search for movies using the OM
 <img width="2559" height="1257" alt="image" src="https://github.com/user-attachments/assets/3558963b-e819-4d91-b37d-6d00115e9037" />
 <img width="2526" height="1296" alt="image" src="https://github.com/user-attachments/assets/6e014971-9ee3-4bb7-9af5-2cc99987b1a6" />
 
+## Preface
+This web app was built primarily for desktop viewing as while it can be viewed and access on other devices be prepared for some degree of visual variance between different viewports
+
 ## Features
 - Search for movies by title using the OMDB API
 - View detailed movie information including plot, cast, director, ratings, and runtime
